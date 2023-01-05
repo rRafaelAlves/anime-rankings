@@ -12,6 +12,3 @@ export type Anime = {
     }
 }
 
-export type AnimeList = {
-    data: [Anime]
-}
