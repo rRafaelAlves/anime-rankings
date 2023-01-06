@@ -1,6 +1,7 @@
-import React, { useContext, useReducer } from "react";
+import React from "react";
 import { Anime } from "../types/AnimeList";
 import { Character } from "../types/Character";
+
 
 const FormContext = React.createContext<ContextType | undefined>(undefined);
 
@@ -22,12 +23,12 @@ export const DEFAULT_CHARACTER = {
 };
 
 type ClientState ={
-    ListBetterBest: [Anime]
-    ListBestHistory: [Anime]
-    ListBestProtagonist: [Character]
-    ListBestSoundTrack: [Anime]
-    ListBestAnimation: [Anime]
-    ListMoreCute: [Character]
+    ListBetterBest: [Anime, Anime, Anime]
+    ListBestHistory: [Anime, Anime, Anime]
+    ListBestProtagonist: [Character, Character, Character]
+    ListBestSoundTrack: [Anime, Anime, Anime]
+    ListBestAnimation: [Anime, Anime, Anime]
+    ListMoreCute: [Character, Character, Character]
 };
 
 type Action = {
@@ -45,12 +46,12 @@ type FormProviderProps = {
 };
 
 const initialDate: ClientState ={
-    ListBetterBest: [DEFAULT_ANIME],
-    ListBestHistory: [DEFAULT_ANIME],
-    ListBestProtagonist: [DEFAULT_CHARACTER],
-    ListBestSoundTrack: [DEFAULT_ANIME],
-    ListBestAnimation: [DEFAULT_ANIME],
-    ListMoreCute: [DEFAULT_CHARACTER]
+    ListBetterBest: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
+    ListBestHistory: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
+    ListBestProtagonist: [DEFAULT_CHARACTER , DEFAULT_CHARACTER, DEFAULT_CHARACTER],
+    ListBestSoundTrack: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
+    ListBestAnimation: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
+    ListMoreCute: [DEFAULT_CHARACTER , DEFAULT_CHARACTER, DEFAULT_CHARACTER]
 };
 
 export enum FormActions {
@@ -91,7 +92,7 @@ const formReducer = (state: ClientState, action: Action) => {
 
 export const FormProvider = ({children}: FormProviderProps) =>{
 
-const [state, dispatch] = useReducer(formReducer, initialDate);
+const [state, dispatch] = React.useReducer(formReducer, initialDate);
 
     return(
         <FormContext.Provider value={{state, dispatch}}>
@@ -101,7 +102,7 @@ const [state, dispatch] = useReducer(formReducer, initialDate);
 };
 
 export const useForm = () =>{
-    const context = useContext(FormContext);
+    const context = React.useContext(FormContext);
     if(context === undefined){
         throw Error ('useForm precisa ser utilizado dentro do Provider');
     }
