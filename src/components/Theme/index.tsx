@@ -1,4 +1,6 @@
 import React from 'react';
+import Footer from '../Footer';
+import Header from '../Header';
 import * as C from './styles';
 
 type Props = {
@@ -8,7 +10,13 @@ type Props = {
 function Theme({children}: Props){
     return(
         <C.Container>
+            
+            <Header />
+            
             {children}
+            
+            <Footer />
+           
         </C.Container>
     )
 }

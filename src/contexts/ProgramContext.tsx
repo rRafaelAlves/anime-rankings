@@ -1,11 +1,12 @@
 import React from "react";
+import { Form } from "react-router-dom";
 import { Anime } from "../types/AnimeList";
 import { Character } from "../types/Character";
 
 
 const FormContext = React.createContext<ContextType | undefined>(undefined);
 
-export const DEFAULT_ANIME = {attributes:{
+export const DEFAULT_ANIME : Anime = {attributes:{
     canonicalTitle: '',
     episodeCount: 0,
     posterImage: {
@@ -29,6 +30,7 @@ type ClientState ={
     ListBestSoundTrack: [Anime, Anime, Anime]
     ListBestAnimation: [Anime, Anime, Anime]
     ListMoreCute: [Character, Character, Character]
+    currentStep: number
 };
 
 type Action = {
@@ -51,7 +53,8 @@ const initialDate: ClientState ={
     ListBestProtagonist: [DEFAULT_CHARACTER , DEFAULT_CHARACTER, DEFAULT_CHARACTER],
     ListBestSoundTrack: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
     ListBestAnimation: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
-    ListMoreCute: [DEFAULT_CHARACTER , DEFAULT_CHARACTER, DEFAULT_CHARACTER]
+    ListMoreCute: [DEFAULT_CHARACTER , DEFAULT_CHARACTER, DEFAULT_CHARACTER],
+    currentStep: 0
 };
 
 export enum FormActions {
@@ -60,7 +63,8 @@ export enum FormActions {
     setListBestProtagonist,
     setListBestSoundTrack,
     setListBestAnimation,
-    setListMoreCute
+    setListMoreCute,
+    setCurrentStep
 
 };
 const formReducer = (state: ClientState, action: Action) => {
@@ -83,6 +87,9 @@ const formReducer = (state: ClientState, action: Action) => {
 
         case FormActions.setListBestProtagonist:
             return { ...state, ListBestProtagonist: action.payload };
+
+        case FormActions.setCurrentStep:
+            return { ...state, currentStep: action.payload}
 
 
         default: return state;
