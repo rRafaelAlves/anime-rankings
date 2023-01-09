@@ -47,6 +47,7 @@ function BestHistory() {
   const searchAnime = async (name: string) => {
     const res = await axios.get(`https://kitsu.io/api/edge/anime?filter[text]=${name}`);
     const { data } = res;
+    console.log(data)
     setListAnime(prevList => {
       const newList = [...prevList];
       newList[currentAnime] = data.data[0];
@@ -58,87 +59,36 @@ function BestHistory() {
   return (
 
     <Theme>
-      <C.ListBox>
+     <C.ListBox>
+  {listAnime.map((anime, index) => (
+    <C.ContainerAnime key={index}>
+     {index === 0 ?  "3° Lugar": index === 1 ? "1° Lugar" : "2° Lugar"}
 
-        <C.ContainerAnime>
-          Anime 1
+      <div>
+        <C.AnimeName>
+          {anime?.attributes?.canonicalTitle}
+        </C.AnimeName>
 
+        {state.ListBestHistory[index].attributes.episodeCount !== 0 && (
+          <C.AnimeEpsCount >
+            Número de episódios: {state.ListBestHistory[index].attributes.canonicalTitle === "One Piece" ? '1047' : state.ListBestHistory[index].attributes.episodeCount}
+          </C.AnimeEpsCount>
+        )}
 
+        {state.ListBestHistory[index].attributes.posterImage.tiny.length !== 0 ? (
+          <C.AnimePoster src={state.ListBestHistory[index].attributes.posterImage.original} alt={state.ListBestHistory[index].attributes.canonicalTitle} />
+        ) : (
+          <C.DefaultImage src='https://spassodourado.com.br/wp-content/uploads/2015/01/default-placeholder.png' />
+        )}
+      </div>
 
-          <div>
-            <C.AnimeName>
-              {listAnime[0]?.attributes?.canonicalTitle}
-            </C.AnimeName>
-
-            <C.AnimeEpsCount >
-              Número de episódios: {state.ListBestHistory[0].attributes.episodeCount}
-            </C.AnimeEpsCount>
-
-            <C.AnimePoster src={state.ListBestHistory[0].attributes.posterImage.tiny} alt="" />
-          </div>
-
-          <C.FormAnimes id='form' onSubmit={e => formatSearch(e)}>
-
-            <C.InputSearchAnime type="text" ref={inputRef} id='name' name='name' />
-            <C.ButtonSearch type="submit" form='form' value="Buscar" onClick={() => setCurrentAnime(0)} />
-          </C.FormAnimes>
-
-
-        </C.ContainerAnime>
-
-        <C.ContainerAnime>
-          Anime 2
-
-
-
-          <div>
-            <C.AnimeName>
-              {listAnime[1]?.attributes?.canonicalTitle}
-            </C.AnimeName>
-
-            <C.AnimeEpsCount >
-              Número de episódios: {state.ListBestHistory[1].attributes.episodeCount}
-            </C.AnimeEpsCount>
-
-            <C.AnimePoster src={state.ListBestHistory[1].attributes.posterImage.tiny} alt="" />
-          </div>
-
-          <C.FormAnimes id='form' onSubmit={e => formatSearch(e)}>
-
-            <C.InputSearchAnime type="text" ref={inputRef2} id='name' name='name' />
-            <C.ButtonSearch type="submit" form='form' value="Buscar" onClick={() => setCurrentAnime(1)} />
-          </C.FormAnimes>
-
-
-        </C.ContainerAnime>
-
-        <C.ContainerAnime>
-          Anime 3
-
-
-
-          <div>
-            <C.AnimeName>
-              {listAnime[2]?.attributes?.canonicalTitle}
-            </C.AnimeName>
-
-            <C.AnimeEpsCount >
-              Número de episódios: {state.ListBestHistory[2].attributes.episodeCount}
-            </C.AnimeEpsCount>
-
-            <C.AnimePoster src={state.ListBestHistory[2].attributes.posterImage.tiny} alt="" />
-          </div>
-
-          <C.FormAnimes id='form' onSubmit={e => formatSearch(e)}>
-
-            <C.InputSearchAnime type="text" ref={inputRef3} id='name' name='name' />
-            <C.ButtonSearch type="submit" form='form' value="Buscar" onClick={() => setCurrentAnime(2)} />
-          </C.FormAnimes>
-
-
-        </C.ContainerAnime>
-
-      </C.ListBox>
+      <C.FormAnimes id='form' onSubmit={e => formatSearch(e)}>
+        <C.InputSearchAnime type="text" ref={index === 0 ? inputRef : index === 1 ? inputRef2 : inputRef3} id='name' name='name' />
+        <C.ButtonSearch type="submit" form='form' value="Buscar" onClick={() => setCurrentAnime(index)} />
+      </C.FormAnimes>
+    </C.ContainerAnime>
+  ))}
+</C.ListBox>
 
     </Theme>
   )
