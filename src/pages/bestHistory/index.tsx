@@ -3,19 +3,44 @@ import { DEFAULT_ANIME, FormActions, useForm } from '../../contexts/ProgramConte
 import axios from 'axios';
 import { Anime } from '../../types/AnimeList';
 import Theme from '../../components/Theme';
-import * as C from './styles';
+import * as C from '../../Pages.styles';
 import SearchIcon from '@mui/icons-material/Search';
 import { Button } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import { useNavigate } from 'react-router-dom';
 
 
 
 function BestHistory() {
 
-  const [listAnime, setListAnime] = React.useState<Array<Anime>>([DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME]);
-  const [currentAnime, setCurrentAnime] = React.useState<number>(0);
+  const Navigate = useNavigate();
   const { state, dispatch } = useForm();
+  const [listAnime, setListAnime] = React.useState<Array<Anime>>([state.ListBestHistory[0], state.ListBestHistory[1], state.ListBestHistory[2]]);
+  const [currentAnime, setCurrentAnime] = React.useState<number>(0);
+
+
+
+  const handleNextStep = () =>{
+     Navigate('/BestSoundTrack'); 
+
+     dispatch({
+      type: FormActions.setCurrentStep,
+      payload: state.currentStep + 1
+  })
+   
+}
+
+
+const handleBackStep = () =>{
+   Navigate('/');
+
+   dispatch({
+    type: FormActions.setCurrentStep,
+    payload: state.currentStep - 1
+})
+ 
+}
 
 
   React.useEffect(() => {
@@ -49,7 +74,6 @@ function BestHistory() {
   const searchAnime = async (name: string) => {
     const res = await axios.get(`https://kitsu.io/api/edge/anime?filter[text]=${name}`);
     const { data } = res;
-    console.log(data);
     if(!data){
       return
     }
@@ -101,8 +125,8 @@ function BestHistory() {
   ))}
 </C.ListBox>
 
-<NavigateBeforeIcon style={{position: 'absolute', top: '44vh', left: 90, fontSize: 50, cursor: 'pointer'}} /> 
-<NavigateNextIcon style={{position: 'absolute', top: '44vh', right: 90, fontSize: 50, cursor: 'pointer'}} /> 
+<NavigateBeforeIcon onClick={()=> handleBackStep()} style={{position: 'absolute', top: '44vh', left: 90, fontSize: 50, cursor: 'pointer'}} /> 
+<NavigateNextIcon onClick={()=> handleNextStep()} style={{position: 'absolute', top: '44vh', right: 90, fontSize: 50, cursor: 'pointer'}} /> 
 
     </Theme>
   )
