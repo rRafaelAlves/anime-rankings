@@ -22,7 +22,8 @@ export const Router = () => {
                 <Route path='/bestSoundTrack' element={<BestSoundTrack />} />
                 <Route path="/betterBest" element={<BetterBest />} />
                 <Route path='/bestProtagonist' element={<BestProtagonist />} />
-                <Route path='/bestSoundTrack' element={<MoreCute />} />
+                <Route path='/moreCute' element={<MoreCute />} />
+                <Route path='/bestProtagonist' element={<BestProtagonist />} />
             </Routes>
         </BrowserRouter>
 

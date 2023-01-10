@@ -24,7 +24,7 @@ export const Main = styled.main`
 
 export const ProgressBar = styled.div`
 border-bottom: 6px solid white;
-width: 400px;
+width: 402px;
 margin-top: 40px;
 position: relative;
 
@@ -40,22 +40,38 @@ position: relative;
 .step2{
     position: absolute;
     background-color: green;
-    width: 100px;
+    width: 67px;
     border-bottom: 6px solid green;
 }
 
 .step3{
     position: absolute;
     background-color: green;
-    width: 200px;
+    width: 134px;
     border-bottom: 6px solid green;
 }
 
 .step4{
     position: absolute;
     background-color: green;
-    width: 300px;
+    width: 201px;
     border-bottom: 6px solid green;
 }
+
+.step5{
+    position: absolute;
+    background-color: green;
+    width: 268px;
+    border-bottom: 6px solid green;
+}
+
+.step6{
+    position: absolute;
+    background-color: green;
+    width: 335px;
+    border-bottom: 6px solid green;
+}
+
+
 
 `

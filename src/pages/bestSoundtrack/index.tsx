@@ -20,9 +20,6 @@ function BestSoundTrack() {
   const [listAnime, setListAnime] = React.useState<Array<Anime>>([state.ListBestSoundTrack[0], state.ListBestSoundTrack[1], state.ListBestSoundTrack[2]]);
   const [currentAnime, setCurrentAnime] = React.useState<number>(0);
   
-
-
-  
   const handleNextStep = () =>{
     Navigate('/bestAnimation'); 
 
