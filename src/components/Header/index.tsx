@@ -3,7 +3,8 @@ import * as C from './styles';
 function Header(){
     return(
         <C.Container>
-            Header
+            <p>Anime ranking dos tios</p>
+            
         </C.Container>
     )
 }

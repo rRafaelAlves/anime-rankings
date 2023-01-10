@@ -4,6 +4,9 @@ import axios from 'axios';
 import { Anime } from '../../types/AnimeList';
 import Theme from '../../components/Theme';
 import * as C from './styles';
+import SearchIcon from '@mui/icons-material/Search';
+import { Button } from '@mui/material';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 
 
@@ -21,10 +24,8 @@ function BestHistory() {
         type: FormActions.setListBestHistory,
         payload: listAnime
       })
-
-
     }
-
+    
     handleNameChange();
   }, [listAnime])
 
@@ -47,7 +48,10 @@ function BestHistory() {
   const searchAnime = async (name: string) => {
     const res = await axios.get(`https://kitsu.io/api/edge/anime?filter[text]=${name}`);
     const { data } = res;
-    console.log(data)
+    console.log(data);
+    if(!data){
+      return
+    }
     setListAnime(prevList => {
       const newList = [...prevList];
       newList[currentAnime] = data.data[0];
@@ -59,24 +63,27 @@ function BestHistory() {
   return (
 
     <Theme>
+      
      <C.ListBox>
+
+   
   {listAnime.map((anime, index) => (
     <C.ContainerAnime key={index}>
      {index === 0 ?  "3° Lugar": index === 1 ? "1° Lugar" : "2° Lugar"}
 
       <div>
         <C.AnimeName>
-          {anime?.attributes?.canonicalTitle}
+          {anime?.attributes?.canonicalTitle.length > 12 ?anime?.attributes?.canonicalTitle.slice(0, 19) : anime?.attributes?.canonicalTitle}
         </C.AnimeName>
 
-        {state.ListBestHistory[index].attributes.episodeCount !== 0 && (
+        {state.ListBestHistory[index]?.attributes?.episodeCount !== 0 && (
           <C.AnimeEpsCount >
-            Número de episódios: {state.ListBestHistory[index].attributes.canonicalTitle === "One Piece" ? '1047' : state.ListBestHistory[index].attributes.episodeCount}
+            Número de episódios: {state?.ListBestHistory[index]?.attributes?.canonicalTitle === "One Piece" ? '1047' : state?.ListBestHistory[index]?.attributes?.episodeCount}
           </C.AnimeEpsCount>
         )}
 
-        {state.ListBestHistory[index].attributes.posterImage.tiny.length !== 0 ? (
-          <C.AnimePoster src={state.ListBestHistory[index].attributes.posterImage.original} alt={state.ListBestHistory[index].attributes.canonicalTitle} />
+        {state.ListBestHistory[index]?.attributes?.posterImage?.tiny?.length !== 0 ? (
+          <C.AnimePoster src={state?.ListBestHistory[index]?.attributes?.posterImage?.original} alt={state?.ListBestHistory[index]?.attributes?.canonicalTitle} />
         ) : (
           <C.DefaultImage src='https://spassodourado.com.br/wp-content/uploads/2015/01/default-placeholder.png' />
         )}
@@ -84,11 +91,17 @@ function BestHistory() {
 
       <C.FormAnimes id='form' onSubmit={e => formatSearch(e)}>
         <C.InputSearchAnime type="text" ref={index === 0 ? inputRef : index === 1 ? inputRef2 : inputRef3} id='name' name='name' />
-        <C.ButtonSearch type="submit" form='form' value="Buscar" onClick={() => setCurrentAnime(index)} />
+        
+        <Button variant="contained" type="submit" form='form' value="Buscar" onClick={() => setCurrentAnime(index)} style={{width: 60}} size="small">
+          <SearchIcon />
+        </Button>
       </C.FormAnimes>
     </C.ContainerAnime>
   ))}
 </C.ListBox>
+
+
+<NavigateNextIcon style={{position: 'absolute', top: '44vh', right: 90, fontSize: 50, cursor: 'pointer'}} /> 
 
     </Theme>
   )

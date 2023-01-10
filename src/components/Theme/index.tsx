@@ -1,4 +1,5 @@
 import React from 'react';
+import { TitleStep } from '../../Pages.styles';
 import Footer from '../Footer';
 import Header from '../Header';
 import * as C from './styles';
@@ -12,8 +13,12 @@ function Theme({children}: Props){
         <C.Container>
             
             <Header />
-            
-            {children}
+
+                
+                <C.Main>
+                MELHOR ALGO
+                    {children}
+                </C.Main>
             
             <Footer />
            

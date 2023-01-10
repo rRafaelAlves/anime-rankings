@@ -5,7 +5,6 @@ import styled from "styled-components";
 export const ListBox = styled.div`
 display: flex;
 justify-content: space-between;
-background-color: pink;
 width: 560px;
 `
 
@@ -32,19 +31,13 @@ export const FormAnimes = styled.form`
 export const InputSearchAnime = styled.input`
 
 padding: 4px;
-width: 90px;
-
-`
-
-export const ButtonSearch = styled.input`
-
-padding: 8px;
-
+width: 112px; 
+color: black;
 `
 
 export const AnimeName = styled.p`
 
-font-size: 16px;
+font-size: 14px;
 font-weight: bold ;
 
 `
@@ -61,6 +54,7 @@ box-shadow: 5px 8px 18px -1px rgba(0,0,0,0.75);
 `
 
 export const AnimeEpsCount = styled.p`
+font-size: 10px;
 
 `
 

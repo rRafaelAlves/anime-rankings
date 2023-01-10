@@ -3,7 +3,8 @@ import * as C from './styles';
 function Footer(){
     return(
         <C.Container>
-            Feito por rafael
+            <p>Desenvolvido com carinho por Rosinante / Rafael &copy;</p>
+           
         </C.Container>
     )
 }
