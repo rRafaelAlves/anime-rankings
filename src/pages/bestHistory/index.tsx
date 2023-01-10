@@ -7,6 +7,7 @@ import * as C from './styles';
 import SearchIcon from '@mui/icons-material/Search';
 import { Button } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
 
 
@@ -100,7 +101,7 @@ function BestHistory() {
   ))}
 </C.ListBox>
 
-
+<NavigateBeforeIcon style={{position: 'absolute', top: '44vh', left: 90, fontSize: 50, cursor: 'pointer'}} /> 
 <NavigateNextIcon style={{position: 'absolute', top: '44vh', right: 90, fontSize: 50, cursor: 'pointer'}} /> 
 
     </Theme>
