@@ -1,5 +1,5 @@
 import React from 'react';
-import { DEFAULT_ANIME, FormActions, useForm } from '../../contexts/ProgramContext';
+import { FormActions, useForm } from '../../contexts/ProgramContext';
 import axios from 'axios';
 import { Anime } from '../../types/AnimeList';
 import Theme from '../../components/Theme';
