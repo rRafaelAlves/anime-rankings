@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Theme from '../../components/Theme';
 import { FormActions, useForm } from '../../contexts/ProgramContext';
+import * as C from './styles';
 
 
 function Menu(){
@@ -19,7 +20,7 @@ function Menu(){
     return( 
         <Theme>
             <div>
-                <button style={{color: 'black'}} onClick={()=> nextPage()}>Começar</button>
+                <C.ButtonStart style={{color: 'black'}} onClick={()=> nextPage()}>Começar</C.ButtonStart>
             </div>
         </Theme>
     )

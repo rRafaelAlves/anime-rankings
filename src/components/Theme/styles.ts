@@ -27,16 +27,17 @@ border-bottom: 6px solid white;
 width: 402px;
 margin-top: 40px;
 position: relative;
+border-radius: 4px;
 
 
-.step1{
-    position: absolute;
-    background-color: green;
-    width: 0px;
-    border-bottom: 6px solid green;
-  
-
+&.steps{
+    display: none;
 }
+
+.step2, .step3, .step4, .step5, .step6, .step7{
+    border-radius: 4px;
+}
+
 .step2{
     position: absolute;
     background-color: green;
@@ -73,7 +74,7 @@ position: relative;
 }
 
 .step7{
-        position: absolute;
+    position: absolute;
     background-color: green;
     width: 402px;
     border-bottom: 6px solid green;
