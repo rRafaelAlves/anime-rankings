@@ -24,6 +24,8 @@ function Final(){
  }
     return( 
         <Theme>
+
+            <div>Teste</div>
          <NavigateBeforeIcon onClick={()=> handleBackStep()} style={{position: 'absolute', top: '44vh', left: 90, fontSize: 50, cursor: 'pointer'}} />
         </Theme>
         
