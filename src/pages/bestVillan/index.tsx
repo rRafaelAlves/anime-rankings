@@ -9,29 +9,29 @@ import { Character } from '../../types/Character';
 
 
 
-function MoreCute() {
+function BestVillan() {
 
   const Navigate = useNavigate();
   const { state, dispatch } = useForm();
-  const [Character, setCharacter] = React.useState<Character>(state.MoreCute);
+  const [Character, setCharacter] = React.useState<Character>(state.BestVilan);
 
 
   const  listCharacters: Character[] = [
-    {anime: 'Kotaro vai morar sozinho', name: 'Kotaro', poster: 'https://i0.wp.com/www.jbox.com.br/wp/wp-content/uploads/2022/02/kotaro-destacada.jpg?fit=774%2C489&quality=99&strip=all&ssl=1' },
-    {anime: 'One Piece', name: 'Chopper', poster: 'https://ovicio.com.br/wp-content/uploads/2021/11/20211116-ovicio-one-piece-chopper-555x555.jpg' },
-    {anime: 'Spy X Family', name: 'Anya', poster: 'https://www.seucurioso.com/wp-content/uploads/2022/07/portada_spy-x-family-42.jpg' },
-    {anime: 'Avatar', name: 'Aang', poster: 'https://tm.ibxk.com.br/2021/12/13/13093901049065.jpg?ims=1200x675' },
-    {anime: 'One Piece', name: 'Luffy', poster: 'https://uploads.spiritfanfiction.com/historias/capitulos/202102/0-imagines-one-piece-0-21614730-030220210126.jpg' },
-    {anime: 'Ousama Ranking', name: 'Bojji', poster: 'https://i.pinimg.com/736x/39/72/1e/39721ea2e219c552964d9a38d75341e9.jpg' },
-    {anime: 'Ano Hana', name: 'Menma', poster: 'https://i.pinimg.com/564x/f2/ed/e0/f2ede02c46696cdb28f37f0eef8937d1.jpg' },
-    {anime: 'Avatar', name: 'Appa', poster: 'https://pbs.twimg.com/media/E-pMuuvWQAQYE7L.jpg' },
+    {anime: 'Kimetsu no Yaiba', name: 'Muzan', poster: 'http://pm1.narvii.com/7328/c32417fbc2eb70c75b061d041943d15e41ec3adfr1-350-490v2_00.jpg' },
+    {anime: 'One Piece', name: 'Akainu', poster: 'https://criticalhits.com.br/wp-content/uploads/2022/07/fb2b3-16587779097074-1920-910x512.jpg' },
+    {anime: 'Hunter x Hunter', name: 'Meruem', poster: 'https://www.nautiljon.com/images/perso/00/59/meruem_10695.webp' },
+    {anime: 'Naruto', name: 'Madara', poster: 'https://criticalhits.com.br/wp-content/uploads/2020/11/madara-uchiha-hokage-naruto-910x550.jpeg' },
+    {anime: 'Hunter X Hunter', name: 'Chrollo', poster: 'https://criticalhits.com.br/wp-content/uploads/2019/09/Chrollo-Lucilfer.jpg' },
+    {anime: 'Avatar', name: 'Azula', poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRRDpb2KEKkw1TE15LbH7CWg5yXZVNdoQHegc4rOb0wwCUeSowo8I3TLz5QVE0NpjuxI&usqp=CAU' },
+    {anime: 'One Piece', name: 'Doflamingo', poster: 'https://i.pinimg.com/736x/2b/6a/48/2b6a4834bf6a9dfeec04e6639fc5fa89.jpg' },
+    {anime: 'Psyco Pass', name: 'Makishima Shogo', poster: 'https://i1.sndcdn.com/artworks-000146965275-69yjtn-t500x500.jpg' },
 
 ];
 
 
 
   const handleNextStep = () =>{
-     Navigate('/bestProtagonist'); 
+     Navigate('/final'); 
 
      dispatch({
       type: FormActions.setCurrentStep,
@@ -42,7 +42,7 @@ function MoreCute() {
 
 
 const handleBackStep = () =>{
-   Navigate('/bestAnimation');
+   Navigate('/bestProtagonist');
 
    dispatch({
     type: FormActions.setCurrentStep,
@@ -56,14 +56,14 @@ const handleBackStep = () =>{
     const handleNameChange = () => {
 
       dispatch({
-        type: FormActions.setMoreCute,
+        type: FormActions.setBestVillan,
         payload: Character
       })
     }
     
     
     handleNameChange();
-    console.log(state.MoreCute)
+    console.log(state.BestVilan)
   }, [Character])
 
 
@@ -83,7 +83,7 @@ const handleBackStep = () =>{
           {listCharacters.map((element, index)=>(
           
                
-                <C.CharacterPost src={element.poster} key={index} onClick={()=> select(element)} className={state.MoreCute.name === element.name ?  'selected': ''}  />
+                <C.CharacterPost src={element.poster} key={index} onClick={()=> select(element)} className={state.BestVilan.name === element.name ?  'selected': ''}  />
                 
           
           ))}
@@ -102,4 +102,4 @@ const handleBackStep = () =>{
   )
 }
 
-export default MoreCute;
+export default BestVillan;

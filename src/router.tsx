@@ -6,6 +6,8 @@ import BestSoundTrack from './pages/bestSoundtrack';
 import BetterBest from './pages/betterBest';
 import BestProtagonist from './pages/bestProtagonist';
 import MoreCute from './pages/moreCute';
+import BestVillan from './pages/bestVillan';
+import Final from './pages/Final';
 
 
 
@@ -24,6 +26,8 @@ export const Router = () => {
                 <Route path='/bestProtagonist' element={<BestProtagonist />} />
                 <Route path='/moreCute' element={<MoreCute />} />
                 <Route path='/bestProtagonist' element={<BestProtagonist />} />
+                <Route path='/bestVillan' element={<BestVillan />} />
+                <Route path= '/final' element={<Final />} />
             </Routes>
         </BrowserRouter>
 

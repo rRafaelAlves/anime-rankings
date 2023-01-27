@@ -58,6 +58,33 @@ background-color: black;
 box-shadow: 5px 8px 18px -1px rgba(0,0,0,0.75);
 `
 
+
+
+export const CharacterPost = styled.img`
+border: 1px solid black;
+height: 150px;
+width: 128px;
+background-color: black;
+-webkit-box-shadow: 5px 8px 18px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 5px 8px 18px -1px rgba(0,0,0,0.75);
+box-shadow: 5px 8px 18px -1px rgba(0,0,0,0.75);
+margin: 0 6px;
+border: 1px solid transparent;
+transition: ease-in 0.1s;
+cursor: pointer;
+
+&:hover{
+
+    border: 6px solid blue;
+    border-radius: 8px;
+}
+
+&.selected{
+    border: 6px solid blue;
+    border-radius: 8px;
+}
+`
+
 export const AnimeEpsCount = styled.p`
 font-size: 10px;
 `

@@ -6,16 +6,18 @@ import { Character } from "../types/Character";
 
 const FormContext = React.createContext<ContextType | undefined>(undefined);
 
-export const DEFAULT_ANIME : Anime = {attributes:{
-    canonicalTitle: '',
-    episodeCount: 0,
-    posterImage: {
-        large: '',
-        medium: '',
-        original: '',
-        tiny: ''
+export const DEFAULT_ANIME: Anime = {
+    attributes: {
+        canonicalTitle: '',
+        episodeCount: 0,
+        posterImage: {
+            large: '',
+            medium: '',
+            original: '',
+            tiny: ''
+        }
     }
-}};
+};
 
 export const DEFAULT_CHARACTER = {
     name: '',
@@ -23,14 +25,15 @@ export const DEFAULT_CHARACTER = {
     poster: ''
 };
 
-type ClientState ={
+type ClientState = {
     ListBetterBest: [Anime, Anime, Anime]
     ListBestHistory: [Anime, Anime, Anime]
-    ListBestProtagonist: [Character, Character, Character]
+    BestProtagonist: Character
     ListBestSoundTrack: [Anime, Anime, Anime]
     ListBestAnimation: [Anime, Anime, Anime]
-    ListMoreCute: [Character, Character, Character]
+    MoreCute: Character
     currentStep: number
+    BestVilan: Character
 };
 
 type Action = {
@@ -40,30 +43,32 @@ type Action = {
 
 type ContextType = {
     state: ClientState
-    dispatch: (action: Action)=>void
+    dispatch: (action: Action) => void
 };
 
 type FormProviderProps = {
     children: React.ReactNode
 };
 
-const initialDate: ClientState ={
+const initialDate: ClientState = {
     ListBetterBest: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
     ListBestHistory: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
-    ListBestProtagonist: [DEFAULT_CHARACTER , DEFAULT_CHARACTER, DEFAULT_CHARACTER],
     ListBestSoundTrack: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
     ListBestAnimation: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
-    ListMoreCute: [DEFAULT_CHARACTER , DEFAULT_CHARACTER, DEFAULT_CHARACTER],
+    MoreCute: DEFAULT_CHARACTER,
+    BestVilan: DEFAULT_CHARACTER,
+    BestProtagonist: DEFAULT_CHARACTER,
     currentStep: 0
 };
 
 export enum FormActions {
     setListBetterBest,
     setListBestHistory,
-    setListBestProtagonist,
+    setBestProtagonist,
     setListBestSoundTrack,
     setListBestAnimation,
-    setListMoreCute,
+    setMoreCute,
+    setBestVillan,
     setCurrentStep
 
 };
@@ -82,14 +87,17 @@ const formReducer = (state: ClientState, action: Action) => {
         case FormActions.setListBetterBest:
             return { ...state, ListBetterBest: action.payload };
 
-        case FormActions.setListMoreCute:
-            return { ...state, ListMoreCute: action.payload };
+        case FormActions.setMoreCute:
+            return { ...state, MoreCute: action.payload };
 
-        case FormActions.setListBestProtagonist:
-            return { ...state, ListBestProtagonist: action.payload };
+        case FormActions.setBestProtagonist:
+            return { ...state, BestProtagonist: action.payload };
+
+        case FormActions.setBestVillan:
+            return { ...state, BestVilan: action.payload };
 
         case FormActions.setCurrentStep:
-            return { ...state, currentStep: action.payload}
+            return { ...state, currentStep: action.payload }
 
 
         default: return state;
@@ -97,21 +105,21 @@ const formReducer = (state: ClientState, action: Action) => {
 }
 
 
-export const FormProvider = ({children}: FormProviderProps) =>{
+export const FormProvider = ({ children }: FormProviderProps) => {
 
-const [state, dispatch] = React.useReducer(formReducer, initialDate);
+    const [state, dispatch] = React.useReducer(formReducer, initialDate);
 
-    return(
-        <FormContext.Provider value={{state, dispatch}}>
+    return (
+        <FormContext.Provider value={{ state, dispatch }}>
             {children}
         </FormContext.Provider>
     )
 };
 
-export const useForm = () =>{
+export const useForm = () => {
     const context = React.useContext(FormContext);
-    if(context === undefined){
-        throw Error ('useForm precisa ser utilizado dentro do Provider');
+    if (context === undefined) {
+        throw Error('useForm precisa ser utilizado dentro do Provider');
     }
     return context;
 }

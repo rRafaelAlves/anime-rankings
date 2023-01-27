@@ -72,6 +72,13 @@ position: relative;
     border-bottom: 6px solid green;
 }
 
+.step7{
+        position: absolute;
+    background-color: green;
+    width: 402px;
+    border-bottom: 6px solid green;
+}
+
 
 
 `
