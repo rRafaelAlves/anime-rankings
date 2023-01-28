@@ -8,6 +8,8 @@ import BestProtagonist from './pages/bestProtagonist';
 import MoreCute from './pages/moreCute';
 import BestVillan from './pages/bestVillan';
 import Final from './pages/Final';
+import FinalBetterBest from './pages/finalBetterBest';
+import End from './pages/end';
 
 
 
@@ -22,12 +24,14 @@ export const Router = () => {
                 <Route path="/bestAnimation" element={<BestAnimation />} />
                 <Route path="/bestHistory" element={<BestHistory />} />
                 <Route path='/bestSoundTrack' element={<BestSoundTrack />} />
-                <Route path="/betterBest" element={<BetterBest />} />
                 <Route path='/bestProtagonist' element={<BestProtagonist />} />
                 <Route path='/moreCute' element={<MoreCute />} />
                 <Route path='/bestProtagonist' element={<BestProtagonist />} />
                 <Route path='/bestVillan' element={<BestVillan />} />
+                <Route path="/betterBest" element={<BetterBest />} />
                 <Route path= '/final' element={<Final />} />
+                <Route path='/finalBetterBest' element={<FinalBetterBest />}/>
+                <Route path='/end' element={<End />} />
             </Routes>
         </BrowserRouter>
 

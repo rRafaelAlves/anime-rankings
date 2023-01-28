@@ -26,7 +26,7 @@ export const DEFAULT_CHARACTER = {
 };
 
 type ClientState = {
-    ListBetterBest: [Anime, Anime, Anime]
+    ListBetterBest: [Anime, Anime, Anime, Anime, Anime, Anime]
     ListBestHistory: [Anime, Anime, Anime]
     BestProtagonist: Character
     ListBestSoundTrack: [Anime, Anime, Anime]
@@ -51,7 +51,7 @@ type FormProviderProps = {
 };
 
 const initialDate: ClientState = {
-    ListBetterBest: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
+    ListBetterBest: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
     ListBestHistory: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
     ListBestSoundTrack: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
     ListBestAnimation: [DEFAULT_ANIME, DEFAULT_ANIME, DEFAULT_ANIME],
@@ -67,6 +67,7 @@ export enum FormActions {
     setBestProtagonist,
     setListBestSoundTrack,
     setListBestAnimation,
+    setBetterBest,
     setMoreCute,
     setBestVillan,
     setCurrentStep
@@ -95,6 +96,9 @@ const formReducer = (state: ClientState, action: Action) => {
 
         case FormActions.setBestVillan:
             return { ...state, BestVilan: action.payload };
+
+        case FormActions.setBetterBest:
+            return { ...state, BetterBest: action.payload };
 
         case FormActions.setCurrentStep:
             return { ...state, currentStep: action.payload }

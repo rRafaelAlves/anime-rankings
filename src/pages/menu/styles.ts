@@ -16,3 +16,8 @@ transition: ease-in 0.1s;
     transform: scale(105%);
 }
 `
+
+export const imgTios = styled.img`
+margin: 0 20px;
+width: 60px;
+`

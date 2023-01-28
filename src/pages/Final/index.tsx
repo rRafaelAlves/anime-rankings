@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Theme from '../../components/Theme';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import { FormActions, useForm } from '../../contexts/ProgramContext';
 import * as C from './styles';
@@ -13,8 +14,19 @@ function Final() {
     const { state, dispatch } = useForm();
     const Navigate = useNavigate();
 
+
+    const handleNextStep = () =>{
+        Navigate('/finalBetterBest'); 
+   
+        dispatch({
+         type: FormActions.setCurrentStep,
+         payload: state.currentStep + 1
+     })
+      
+   }
+
     const handleBackStep = () => {
-        Navigate('/bestVillan');
+        Navigate('/betterBest');
 
         dispatch({
             type: FormActions.setCurrentStep,
@@ -144,7 +156,8 @@ function Final() {
             </C.Container>
 
             <NavigateBeforeIcon onClick={() => handleBackStep()} style={{ position: 'absolute', top: '44vh', left: 90, fontSize: 50, cursor: 'pointer' }} />
-            <C.Rosinante src='https://practicaltyping.com/wp-content/uploads/2019/05/corazon.jpg' />
+            <NavigateNextIcon onClick={()=> handleNextStep()} style={{position: 'absolute', top: '44vh', right: 90, fontSize: 50, cursor: 'pointer'}} /> 
+              {/* <C.Rosinante src='https://practicaltyping.com/wp-content/uploads/2019/05/corazon.jpg' /> */}  
         </Theme>
 
     )

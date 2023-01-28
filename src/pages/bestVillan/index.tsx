@@ -25,13 +25,14 @@ function BestVillan() {
     {anime: 'Avatar', name: 'Azula', poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRRDpb2KEKkw1TE15LbH7CWg5yXZVNdoQHegc4rOb0wwCUeSowo8I3TLz5QVE0NpjuxI&usqp=CAU' },
     {anime: 'One Piece', name: 'Doflamingo', poster: 'https://i.pinimg.com/736x/2b/6a/48/2b6a4834bf6a9dfeec04e6639fc5fa89.jpg' },
     {anime: 'Psyco Pass', name: 'Makishima Shogo', poster: 'https://i1.sndcdn.com/artworks-000146965275-69yjtn-t500x500.jpg' },
+    
 
 ];
 
 
 
   const handleNextStep = () =>{
-     Navigate('/final'); 
+     Navigate('/betterBest'); 
 
      dispatch({
       type: FormActions.setCurrentStep,

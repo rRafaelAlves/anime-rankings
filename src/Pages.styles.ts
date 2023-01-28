@@ -12,7 +12,8 @@ left: 42vw;
 export const ListBox = styled.div`
 display: flex;
 justify-content: space-between;
-width: 560px;
+width: 680px;
+flex-wrap: wrap;
 `
 
 export const ContainerAnime = styled.div`
@@ -62,8 +63,8 @@ box-shadow: 5px 8px 18px -1px rgba(0,0,0,0.75);
 
 export const CharacterPost = styled.img`
 border: 1px solid black;
-height: 150px;
-width: 128px;
+height: 170px;
+width: 158px;
 background-color: black;
 -webkit-box-shadow: 5px 8px 18px -1px rgba(0,0,0,0.75);
 -moz-box-shadow: 5px 8px 18px -1px rgba(0,0,0,0.75);

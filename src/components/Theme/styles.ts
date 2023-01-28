@@ -8,6 +8,7 @@ flex-direction: column;
 background-color: #120a5a;
 
 
+
 `
 
 export const Main = styled.main`
@@ -19,7 +20,7 @@ export const Main = styled.main`
     align-items: center;
     min-height: 95vh;
     position: relative;
-    
+margin-top: 70px;
 `
 
 export const ProgressBar = styled.div`
@@ -74,6 +75,12 @@ border-radius: 4px;
 }
 
 .step7{
+    position: absolute;
+    background-color: green;
+    width: 370px;
+    border-bottom: 6px solid green;
+}
+.step8{
     position: absolute;
     background-color: green;
     width: 402px;

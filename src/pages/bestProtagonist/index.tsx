@@ -25,6 +25,10 @@ function BestProtagonist() {
     {anime: 'Ousama Ranking', name: 'Bojji', poster: 'https://i.pinimg.com/736x/39/72/1e/39721ea2e219c552964d9a38d75341e9.jpg' },
     {anime: 'Death Note', name: 'Kira', poster: 'http://pm1.narvii.com/6476/b97b7b8157934c37f5cd3e7a57100e1e9cec7469_00.jpg' },
     {anime: 'Eight Six', name: 'Nouzen/Lena', poster: 'https://coolhdwall.com/storage/202105/shin-lena-86---eighty-six-4k-wallpaper-3840x2160.jpg' },
+    {anime: 'One Punch Man', name: 'Saitama', poster: 'https://criticalhits.com.br/wp-content/uploads/2020/06/saitama-1.jpg'},
+    {anime: 'Atack on Titan', name: 'Eren', poster: 'https://ovicio.com.br/wp-content/uploads/2022/04/20220404-attack-on-titan-eren_7jay-h960-555x555.webp'},
+    {anime: 'Viland Saga', name: 'Thorfinn', poster: 'https://sportshub.cbsistatic.com/i/2022/07/17/59f12434-ed36-4968-a13c-0bac5c1c9213/vinland-saga-season-2-anime-thorfinn.jpg'},
+    {anime: 'Mob Psycho 100', name: 'MOB', poster: 'https://epipoca.com.br/wp-content/uploads/2022/05/mob-12052022-1200x900.jpg'}
 
 ];
 
