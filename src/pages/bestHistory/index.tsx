@@ -110,7 +110,7 @@ const handleBackStep = () =>{
         {state.ListBestHistory[index]?.attributes?.posterImage?.tiny?.length !== 0 ? (
           <C.AnimePoster src={state?.ListBestHistory[index]?.attributes?.posterImage?.original} alt={state?.ListBestHistory[index]?.attributes?.canonicalTitle} />
         ) : (
-          <C.DefaultImage src='https://spassodourado.com.br/wp-content/uploads/2015/01/default-placeholder.png' />
+          <C.DefaultImage src='https://rafaturis.com.br/wp-content/uploads/2014/01/default-placeholder.png' />
         )}
       </div>
 
