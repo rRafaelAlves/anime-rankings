@@ -46,16 +46,16 @@ function Final() {
                     <h4>Melhor História: </h4>
 
                     <C.ContainerAnime>
-                        <p>1° {state.ListBestHistory[1].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBestHistory[1].attributes.posterImage.original} />
+                        <p>1° {state?.ListBestHistory[1]?.attributes?.canonicalTitle}</p>
+                        <C.Poster src={state?.ListBestHistory[1]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
                     <C.ContainerAnime>
                         <p>2° {state.ListBestHistory[2].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBestHistory[2].attributes.posterImage.original} />
+                        <C.Poster src={state?.ListBestHistory[2]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
                     <C.ContainerAnime>
-                        <p>3° {state.ListBestHistory[0].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBestHistory[0].attributes.posterImage.original} />
+                        <p>3° {state?.ListBestHistory[0]?.attributes?.canonicalTitle}</p>
+                        <C.Poster src={state?.ListBestHistory[0]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
 
 
@@ -68,16 +68,16 @@ function Final() {
                     <h4>Melhor Trilha Sonora: </h4>
 
                     <C.ContainerAnime>
-                        <p>1° {state.ListBestSoundTrack[1].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBestSoundTrack[1].attributes.posterImage.original} />
+                        <p>1° {state?.ListBestSoundTrack[1]?.attributes?.canonicalTitle}</p>
+                        <C.Poster src={state?.ListBestSoundTrack[1]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
                     <C.ContainerAnime>
-                        <p>2° {state.ListBestSoundTrack[2].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBestSoundTrack[2].attributes.posterImage.original} />
+                        <p>2° {state?.ListBestSoundTrack[2]?.attributes?.canonicalTitle}</p>
+                        <C.Poster src={state?.ListBestSoundTrack[2]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
                     <C.ContainerAnime>
-                        <p>3° {state.ListBestSoundTrack[0].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBestSoundTrack[0].attributes.posterImage.original} />
+                        <p>3° {state?.ListBestSoundTrack[0]?.attributes?.canonicalTitle}</p>
+                        <C.Poster src={state?.ListBestSoundTrack[0]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
 
 
@@ -90,16 +90,16 @@ function Final() {
                     <h4>Melhor Animação: </h4>
 
                     <C.ContainerAnime>
-                        <p>1° {state.ListBestAnimation[1].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBestAnimation[1].attributes.posterImage.original} />
+                        <p>1° {state?.ListBestAnimation[1]?.attributes?.canonicalTitle}</p>
+                        <C.Poster src={state?.ListBestAnimation[1]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
                     <C.ContainerAnime>
-                        <p>2° {state.ListBestAnimation[2].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBestAnimation[2].attributes.posterImage.original} />
+                        <p>2° {state?.ListBestAnimation[2]?.attributes?.canonicalTitle}</p>
+                        <C.Poster src={state?.ListBestAnimation[2]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
                     <C.ContainerAnime>
-                        <p>3° {state.ListBestAnimation[0].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBestAnimation[0].attributes.posterImage.original} />
+                        <p>3° {state?.ListBestAnimation[0]?.attributes?.canonicalTitle}</p>
+                        <C.Poster src={state?.ListBestAnimation[0]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
 
 
@@ -118,8 +118,8 @@ function Final() {
                     <h4>Mais Fofo:  </h4>
 
                     <C.ContainerCharacter>
-                        <p>{state.MoreCute.name}</p>
-                        <C.Poster src={state.MoreCute.poster} />
+                        <p>{state?.MoreCute?.name}</p>
+                        <C.Poster src={state?.MoreCute?.poster} />
                     </C.ContainerCharacter>
 
                 </C.ContainerFav>
@@ -130,8 +130,8 @@ function Final() {
                     <h4>Melhor Protagonista:  </h4>
 
                     <C.ContainerCharacter>
-                        <p>{state.BestProtagonist.name}</p>
-                        <C.Poster src={state.BestProtagonist.poster} />
+                        <p>{state?.BestProtagonist?.name}</p>
+                        <C.Poster src={state?.BestProtagonist?.poster} />
                     </C.ContainerCharacter>
 
                 </C.ContainerFav>
@@ -142,8 +142,8 @@ function Final() {
                     <h4>Melhor Vilão:  </h4>
 
                     <C.ContainerCharacter>
-                        <p>{state.BestVilan.name}</p>
-                        <C.Poster src={state.BestVilan.poster} />
+                        <p>{state?.BestVilan?.name}</p>
+                        <C.Poster src={state?.BestVilan?.poster} />
                     </C.ContainerCharacter>
 
                 </C.ContainerFav>

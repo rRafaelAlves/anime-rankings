@@ -43,16 +43,16 @@ function FinalBetterBest() {
 
 
                     <C.ContainerAnime>
-                        <p>1° {state.ListBetterBest[0].attributes.canonicalTitle.length > 12 ? state.ListBetterBest[0].attributes.canonicalTitle.slice(0, 19) : state.ListBetterBest[0].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBetterBest[0].attributes.posterImage.original} />
+                        <p>1° {state?.ListBetterBest[0]?.attributes?.canonicalTitle?.length > 12 ? state?.ListBetterBest[0]?.attributes?.canonicalTitle?.slice(0, 19) : state?.ListBetterBest[0]?.attributes?.canonicalTitle}</p>
+                        <C.Poster src={state?.ListBetterBest[0]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
                     <C.ContainerAnime>
-                        <p>2° {state.ListBetterBest[1].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBetterBest[1].attributes.posterImage.original} />
+                        <p>2° {state?.ListBetterBest[1]?.attributes?.canonicalTitle}</p>
+                        <C.Poster src={state?.ListBetterBest[1]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
                     <C.ContainerAnime>
-                        <p>3° {state.ListBetterBest[2].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBetterBest[2].attributes.posterImage.original} />
+                        <p>3° {state?.ListBetterBest[2]?.attributes?.canonicalTitle}</p>
+                        <C.Poster src={state?.ListBetterBest[2]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
 
 
@@ -62,16 +62,16 @@ function FinalBetterBest() {
                     
 
                     <C.ContainerAnime>
-                        <p>4° {state.ListBetterBest[3].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBetterBest[3].attributes.posterImage.original} />
+                        <p>4° {state?.ListBetterBest[3]?.attributes?.canonicalTitle}</p>
+                        <C.Poster src={state?.ListBetterBest[3]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
                     <C.ContainerAnime>
-                        <p>5° {state.ListBetterBest[4].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBetterBest[4].attributes.posterImage.original} />
+                        <p>5° {state?.ListBetterBest[4]?.attributes?.canonicalTitle}</p>
+                        <C.Poster src={state?.ListBetterBest[4]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
                     <C.ContainerAnime>
-                        <p>6° {state.ListBetterBest[5].attributes.canonicalTitle}</p>
-                        <C.Poster src={state.ListBetterBest[5].attributes.posterImage.original} />
+                        <p>6° {state?.ListBetterBest[5]?.attributes?.canonicalTitle}</p>
+                        <C.Poster src={state?.ListBetterBest[5]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
 
 
