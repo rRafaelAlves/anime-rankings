@@ -50,7 +50,7 @@ function Final() {
                         <C.Poster src={state?.ListBestHistory[1]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
                     <C.ContainerAnime>
-                        <p>2° {state.ListBestHistory[2].attributes.canonicalTitle}</p>
+                        <p>2° {state?.ListBestHistory[2]?.attributes?.canonicalTitle}</p>
                         <C.Poster src={state?.ListBestHistory[2]?.attributes?.posterImage?.original} />
                     </C.ContainerAnime>
                     <C.ContainerAnime>
